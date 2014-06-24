@@ -1,0 +1,69 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
+    %title STANLEY - Free Bootstrap Theme
+    %link{href: "assets/bootstrap.css", rel: "stylesheet"}/
+    %link{href: "assets/main.css", rel: "stylesheet"}/
+    %script{src: "https://code.jquery.com/jquery-1.10.2.min.js"}
+    %script{src: "assets/js/hover.zoom.js"}
+    %script{src: "assets/js/hover.zoom.conf.js"}
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  %body
+    / Static navbar
+    .navbar.navbar-inverse.navbar-static-top
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: "index.html"} STANLEY
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{href: "work.html"} Work
+            %li
+              %a{href: "about.html"} About
+            %li
+              %a{href: "blog.html"} Blog
+            %li
+              %a{href: "contact.html"} Contact
+    = yield
+    #footer
+      .container
+        .row
+          .col-lg-4
+            %h4 My Bunker
+            %p
+              Some Address 987,
+              %br/
+              +34 9054 5455,
+              %br/
+              Madrid, Spain.
+          / /col-lg-4
+          .col-lg-4
+            %h4 My Links
+            %p
+              %a{href: "#"} Dribbble
+              %br/
+              %a{href: "#"} Twitter
+              %br/
+              %a{href: "#"} Facebook
+          / /col-lg-4
+          .col-lg-4
+            %h4 About Stanley
+            %p This cute theme was created to showcase your work in a simple way. Use it wisely.
+          / /col-lg-4
+    /
+      Bootstrap core JavaScript
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    %script{src: "assets/js/bootstrap.min.js"}
