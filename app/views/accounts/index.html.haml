@@ -1,0 +1,17 @@
+%h2 Accounts
+
+%table{border: "1"}
+  %tr
+    %td
+      %b Account Number
+    %td
+      %b Account Name
+    %td
+      %b Account Balance
+  - @accounts.each do |account|
+    %tr
+      %td 
+        = link_to account.account_number, account
+        %td 
+          = account.account_name
+        %td $101

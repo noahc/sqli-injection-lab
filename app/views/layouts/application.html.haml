@@ -7,11 +7,8 @@
     %meta{content: "", name: "description"}/
     %meta{content: "", name: "author"}/
     %title STANLEY - Free Bootstrap Theme
-    %link{href: "assets/bootstrap.css", rel: "stylesheet"}/
-    %link{href: "assets/main.css", rel: "stylesheet"}/
-    %script{src: "https://code.jquery.com/jquery-1.10.2.min.js"}
-    %script{src: "assets/js/hover.zoom.js"}
-    %script{src: "assets/js/hover.zoom.conf.js"}
+    %link{href: "/assets/bootstrap.css", rel: "stylesheet"}/
+    %link{href: "/assets/main.css", rel: "stylesheet"}/
     / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
     /[if lt IE 9]
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -25,45 +22,47 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{href: "index.html"} STANLEY
+          %a.navbar-brand{href: "index.html"} BreakerBank
         .navbar-collapse.collapse
           %ul.nav.navbar-nav.navbar-right
-            %li
-              %a{href: "work.html"} Work
-            %li
-              %a{href: "about.html"} About
-            %li
-              %a{href: "blog.html"} Blog
-            %li
-              %a{href: "contact.html"} Contact
-    = yield
+            - if current_user
+              %li
+                %a{href: "work.html"} My Page
+              %li
+                =link_to "Accounts", accounts_path
+              %li
+                =link_to "Transactions", transactions_path
+              %li
+                %a
+                  = "Welcome, #{current_user.email}"
+              %li
+                %a
+                  = button_to "Sign Out", sign_out_path, :method => :delete
+            - else
+              %li
+                %a{href: "/"} Please Login
+
+    - flash.each do |key, msg|
+      %div{ class: "alert alert-#{key}"}
+        %p 
+          = msg
+    #ww
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2.centered
+            = yield
     #footer
       .container
         .row
           .col-lg-4
             %h4 My Bunker
             %p
-              Some Address 987,
+              1337 Hacker Road,
               %br/
-              +34 9054 5455,
+              832.232.8234,
               %br/
-              Madrid, Spain.
-          / /col-lg-4
+              BreakerVille, USA.
           .col-lg-4
-            %h4 My Links
-            %p
-              %a{href: "#"} Dribbble
-              %br/
-              %a{href: "#"} Twitter
-              %br/
-              %a{href: "#"} Facebook
-          / /col-lg-4
           .col-lg-4
-            %h4 About Stanley
-            %p This cute theme was created to showcase your work in a simple way. Use it wisely.
-          / /col-lg-4
-    /
-      Bootstrap core JavaScript
-      \==================================================
-    / Placed at the end of the document so the pages load faster
-    %script{src: "assets/js/bootstrap.min.js"}
+            %h4 About Breaker Bank
+            %p Proudly Serving the Citizens of Breakerville since 1982. Bringing you the best service and securest banking man can provide.

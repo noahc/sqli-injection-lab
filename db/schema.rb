@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140621165631) do
+ActiveRecord::Schema.define(version: 20140628024021) do
+
+  create_table "accounts", force: true do |t|
+    t.string  "account_number"
+    t.integer "user_id"
+    t.string  "account_name"
+  end
+
+  create_table "transactions", force: true do |t|
+    t.string  "transfer_to"
+    t.string  "transfer_from"
+    t.integer "amount_in_cents"
+    t.integer "account_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

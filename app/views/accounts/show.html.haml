@@ -1,0 +1,19 @@
+%h1 Account
+
+%table{border: "1"}
+  %tr
+    %td
+      %b Transfer From
+    %td
+      %b Transfer To
+    %td
+      %b Amount
+  - @account.transactions.each do |transaction|
+    %tr
+      %td
+        = transaction.transfer_from
+      %td
+        = transaction.transfer_to
+      %td 
+        = transaction.amount_in_cents
+

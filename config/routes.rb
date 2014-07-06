@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root 'pages#index'
-  get 'sign_in'       => 'authentication#sign_in'
-  get 'sign_out'      => 'authentication#sign_out'
-  post 'authenticate' => 'authentication#authenticate'
+  delete 'sign_out' => 'sessions#destroy'
+
+  resources :sessions
+  resources :transactions
+  resources :accounts
 end
 
 

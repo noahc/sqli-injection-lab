@@ -1,17 +1,11 @@
-#ww
-  .container
-    .row
-      .col-lg-8.col-lg-offset-2.centered
-        %h1 Welcome To Breakerville Bank
-        %p The most secure and trustworthy bank on the internet
-        %h3 Please login below:
-        = form_for @user do |f|
-          .field
-            = f.label :username
-            = f.text_field :username
-          .field
-            = f.label :password
-            = f.text_field :password
-          = f.button :submit, "Search"
-
-
+%h1 Welcome To Breakerville Bank
+%p The most secure and trustworthy bank on the internet
+%h3 Please login below:
+= form_tag sessions_path do 
+  .field
+    = label_tag :username
+    = text_field_tag :username
+  .field
+    = label_tag :password
+    = password_field_tag :password
+  = submit_tag :submit
