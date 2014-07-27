@@ -4,6 +4,6 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @account = Account.find(:first, :conditions => "id = '#{params[:id]}'")
+    @account = Account.find(params[:id])
   end
 end
