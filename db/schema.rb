@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140628024021) do
+ActiveRecord::Schema.define(version: 20140729132709) do
 
   create_table "accounts", force: true do |t|
     t.string  "account_number"
     t.integer "user_id"
     t.string  "account_name"
+    t.integer "account_value"
+  end
+
+  create_table "support_requests", force: true do |t|
+    t.integer  "user_id"
+    t.text     "content"
+    t.text     "account_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "transactions", force: true do |t|
@@ -32,6 +41,8 @@ ActiveRecord::Schema.define(version: 20140628024021) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "ssn"
+    t.integer  "main_user_id"
   end
 
 end

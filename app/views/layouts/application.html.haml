@@ -27,14 +27,14 @@
           %ul.nav.navbar-nav.navbar-right
             - if current_user
               %li
-                %a{href: "work.html"} My Page
+                %a
+                  = "Signed In As, #{current_user.email}"
               %li
                 =link_to "Accounts", accounts_path
               %li
                 =link_to "Transactions", transactions_path
               %li
-                %a
-                  = "Welcome, #{current_user.email}"
+                =link_to "Help", new_support_request_path
               %li
                 %a
                   = button_to "Sign Out", sign_out_path, :method => :delete

@@ -1,0 +1,10 @@
+%h1 New Support Request
+= form_tag SupportRequest.new do 
+  .field
+    = label_tag :account
+    = select_tag "account", options_for_select(current_user.accounts.pluck(:account_number, :id))
+  .field
+    = label_tag :content
+    = text_area_tag :content 
+  = submit_tag :submit
+

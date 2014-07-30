@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
+  get 'support_requests/create'
+
+  get 'support_requests/new'
+
+  get 'support_requests/show'
+
   root 'pages#index'
   delete 'sign_out' => 'sessions#destroy'
 
   resources :sessions
   resources :transactions
   resources :accounts
+  resources :support_requests
 end
 
 
