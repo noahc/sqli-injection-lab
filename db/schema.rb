@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140729132709) do
   create_table "support_requests", force: true do |t|
     t.integer  "user_id"
     t.text     "content"
-    t.text     "account_number"
+    t.integer  "account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

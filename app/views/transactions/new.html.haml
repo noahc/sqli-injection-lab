@@ -1,0 +1,14 @@
+- if current_user
+  %h3 Quick Account Transfer
+  = form_tag Transaction.new do 
+    .field
+      = label_tag :account
+      = select_tag "account", options_for_select(current_user.accounts.pluck(:account_number, :id))
+    .field
+      = label_tag :To
+      = select_tag "to", options_for_select(User.pluck(:name))
+    .field
+      = label_tag :Amount
+      = text_field_tag :amount
+    = submit_tag :submit
+

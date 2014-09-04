@@ -34,6 +34,8 @@
               %li
                 =link_to "Transactions", transactions_path
               %li
+                =link_to "Quick Transfer", new_transaction_path
+              %li
                 =link_to "Help", new_support_request_path
               %li
                 %a
@@ -49,21 +51,7 @@
     #ww
       .container
         .row
-          .col-lg-2
-            - if current_user
-              %h3 Quick Account Transfer
-              = form_tag Transaction.new do 
-                .field
-                  = label_tag :account
-                  = select_tag "account", options_for_select(current_user.accounts.pluck(:account_number, :id))
-                .field
-                  = label_tag :To
-                  = select_tag "to", options_for_select(User.pluck(:name))
-                .field
-                  = label_tag :Amount
-                  = text_field_tag :amount
-                = submit_tag :submit
-          .col-lg-8.col-lg-offset-2.centered
+          .col-lg-8.col-lg-offset-2
             = yield
     #footer
       .container

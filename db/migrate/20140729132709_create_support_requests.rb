@@ -3,7 +3,7 @@ class CreateSupportRequests < ActiveRecord::Migration
     create_table :support_requests do |t|
       t.integer :user_id
       t.text :content
-      t.text :account_number
+      t.integer :account_id
 
       t.timestamps
     end
