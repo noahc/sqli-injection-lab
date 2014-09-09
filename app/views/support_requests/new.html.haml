@@ -6,6 +6,7 @@
   .field
     = label_tag :content
     = text_area_tag :content 
-  = hidden_field_tag 'user', current_user.id
+  .field
+    = hidden_field_tag 'user', current_user.id
   = submit_tag :submit
 

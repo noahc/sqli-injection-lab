@@ -1,7 +1,7 @@
 class SupportRequestsController < ApplicationController
 
   def index
-
+    @requests = current_user.support_requests
   end
 
   def create
@@ -11,11 +11,11 @@ class SupportRequestsController < ApplicationController
     #The line below should allow SQLi by inserting, for example, "id='2'"
     user = User.find_by params[:user]
     user.accounts.each do |acc|
-      support_request.content += "\n"
-      support_request.content += "\n #{acc.account_number} -- #{acc.account_name} -- #{acc.account_value}"
+      support_request.account_details = ""
+      support_request.account_details += "\n #{acc.account_number} -- #{acc.account_name} -- #{acc.account_value}"
     end
     support_request.save
-    redirect_to root_path
+    redirect_to support_requests_path
   end
 
   def new
