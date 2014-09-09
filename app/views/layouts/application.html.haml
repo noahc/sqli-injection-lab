@@ -6,7 +6,7 @@
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     %meta{content: "", name: "description"}/
     %meta{content: "", name: "author"}/
-    %title STANLEY - Free Bootstrap Theme
+    %title Breaker Bank
     %link{href: "/assets/bootstrap.css", rel: "stylesheet"}/
     %link{href: "/assets/main.css", rel: "stylesheet"}/
     / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
@@ -28,11 +28,9 @@
             - if current_user
               %li
                 %a
-                  = "Signed In As, #{current_user.email}"
+                  = "Hello, #{current_user.email}"
               %li
                 =link_to "Accounts", accounts_path
-              %li
-                =link_to "Transactions", transactions_path
               %li
                 =link_to "Quick Transfer", new_transaction_path
               %li

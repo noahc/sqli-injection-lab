@@ -11,9 +11,10 @@
   - @account.transactions.each do |transaction|
     %tr
       %td
-        = transaction.transfer_from
+        = binding.pry
+        = User.find(transaction.transfer_from).name
       %td
-        = transaction.transfer_to
+        = User.find(transaction.transfer_to).name
       %td 
         = transaction.amount_in_cents
 

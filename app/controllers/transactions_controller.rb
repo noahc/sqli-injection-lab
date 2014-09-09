@@ -3,6 +3,7 @@ class TransactionsController < ApplicationController
   end
 
   def index
+    binding.pry
     @transactions = current_user.transactions
   end
 

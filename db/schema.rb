@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729132709) do
+ActiveRecord::Schema.define(version: 20140909000840) do
 
   create_table "accounts", force: true do |t|
     t.string  "account_number"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20140729132709) do
   end
 
   create_table "transactions", force: true do |t|
-    t.string  "transfer_to"
-    t.string  "transfer_from"
+    t.integer "transfer_to"
+    t.integer "transfer_from"
     t.integer "amount_in_cents"
     t.integer "account_id"
   end

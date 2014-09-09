@@ -9,7 +9,7 @@
 #
 user = User.create(name: "Texas", email: "texas@usa.com", password: "Dallas")
 account = Account.create(account_number: "CHK001", user_id: user.id , account_name: "Checking")
-Transaction.create(transfer_to: "Mom", transfer_from: user.name, amount_in_cents: 10234234, account_id: account.id)
+Transaction.create(transfer_to: 2, transfer_from: user.id, amount_in_cents: 10234234, account_id: account.id)
 Account.create(account_number: "BRK001", user_id: user.id, account_name: "Broker")
 
 
