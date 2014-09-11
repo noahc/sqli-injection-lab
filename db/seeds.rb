@@ -7,11 +7,22 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #v
 #
-user = User.create(name: "Texas", email: "texas@usa.com", password: "Dallas")
+#76 Billion
+user = User.create(name: "Bill Gates", email: "bill@example.com", password: "Microsoft", ssn: 8328351243)
 account = Account.create(account_number: "CHK001", user_id: user.id , account_name: "Checking")
 Transaction.create(transfer_to: 2, transfer_from: user.id, amount_in_cents: 10234234, account_id: account.id)
-Account.create(account_number: "BRK001", user_id: user.id, account_name: "Broker")
+Account.create(account_number: "BRK001", user_id: user.id, account_name: "Broker", account_value: 19000000000)
+Account.create(account_number: "SVN001", user_id: user.id, account_name: "Savings", account_value: 19000000000)
+Account.create(account_number: "CHK001", user_id: user.id, account_name: "Checking", account_value: 38000000000)
 
+#58.2 Billion
+user = User.create(name: "Warren Buffet", email: "warren@example.com", password: "Berkshire", ssn: 8298128873)
+Account.create(account_number: "BRK003", user_id: user.id, account_name: "Broker", account_value: 19400000000)
+Account.create(account_number: "SVN002", user_id: user.id, account_name: "Savings", account_value: 19400000000)
+Account.create(account_number: "CHK003", user_id: user.id, account_name: "Checking", account_value: 19400000000)
 
-user = User.create(name: "Texas", email: "maine@usa.com", password: "Portland")
-Account.create(account_number: "CHK002", user_id: user.id, account_name: "Checking")
+#48.0 Billion
+user = User.create(name: "Larry Ellison", email: "larry@example.com", password: "Oracle", ssn: 8298128928)
+Account.create(account_number: "BRK002", user_id: user.id, account_name: "Broker", account_value: 16000000000)
+Account.create(account_number: "SVN003", user_id: user.id, account_name: "Savings", account_value: 16000000000)
+Account.create(account_number: "CHK002", user_id: user.id, account_name: "Checking", account_value: 16000000000)

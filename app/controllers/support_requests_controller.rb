@@ -8,7 +8,6 @@ class SupportRequestsController < ApplicationController
     support_request = SupportRequest.new
     support_request.account_id = params[:account]
     support_request.content = params[:content]
-    #The line below should allow SQLi by inserting, for example, "id='2'"
     user = User.find_by params[:user]
     user.accounts.each do |acc|
       support_request.account_details = ""

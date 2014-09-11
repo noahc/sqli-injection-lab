@@ -1,0 +1,14 @@
+%h1 Help Request
+
+- @requests.each do |request|
+  %h5 Account: 
+  %p 
+    = Account.find(request.account_id).account_number
+  %h5 Content
+  %p
+    = request.content
+  %h5 Additional Account Details
+  %p
+    = request.account_details
+  %br
+
