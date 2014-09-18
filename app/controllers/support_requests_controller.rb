@@ -1,7 +1,7 @@
 class SupportRequestsController < ApplicationController
 
   def index
-    @requests = current_user.support_requests
+    @requests = current_user.support_requests.order('created_at DESC')
   end
 
   def create
