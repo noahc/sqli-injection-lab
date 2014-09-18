@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'haml', '~> 4.0.5'
 gem 'pry'
 gem 'pry-nav'
+gem 'mechanize'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

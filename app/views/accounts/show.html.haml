@@ -11,7 +11,6 @@
   - @account.transactions.each do |transaction|
     %tr
       %td
-        = binding.pry
         = User.find(transaction.transfer_from).name
       %td
         = User.find(transaction.transfer_to).name
