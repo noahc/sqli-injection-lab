@@ -9,7 +9,6 @@
 #
 #76 Billion
 user = User.create(name: "Bill Gates", email: "bill@example.com", password: "Microsoft", ssn: 8328351243)
-Transaction.create(transfer_to: 2, transfer_from: user.id, amount_in_cents: 10234234, account_id: account.id)
 Account.create(account_number: "BRK001", user_id: user.id, account_name: "Broker", account_value: 19000000000)
 Account.create(account_number: "SVN001", user_id: user.id, account_name: "Savings", account_value: 19000000000)
 Account.create(account_number: "CHK001", user_id: user.id, account_name: "Checking", account_value: 38000000000)
