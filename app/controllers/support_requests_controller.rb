@@ -9,9 +9,9 @@ class SupportRequestsController < ApplicationController
     support_request.account_id = params[:account]
     support_request.content = params[:content]
     user = User.find_by params[:user]
+    support_request.account_details = ""
     user.accounts.each do |acc|
-      support_request.account_details = ""
-      support_request.account_details += "\n #{acc.account_number} -- #{acc.account_name} -- #{acc.account_value}"
+      support_request.account_details += "#{acc.account_number} -- #{acc.account_name} -- #{view_context.number_to_currency acc.account_value} \n\n"
     end
     support_request.save
     redirect_to support_requests_path
